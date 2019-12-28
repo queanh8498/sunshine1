@@ -1,0 +1,5 @@
+Everytime you change your .env file, you need tor restart the server for the new options to take effect.
+
+Or clear and cache your configuration with
+
+- > php artisan config:cache
