@@ -20,7 +20,6 @@ class CreateMauTable extends Migration
             $table->timestamp('m_capNhat')->nullable()->comment('thoi diem cap nhat');
             $table->tinyInteger('m_trangThai')->default('2')->comment('2 trang  thai ');
 
-           // $table->primary(['m_ma']);
             $table->unique(['m_ten']);
 
         });

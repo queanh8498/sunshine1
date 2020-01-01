@@ -49,3 +49,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/admin/activate/{nv_ma}', 'Backend\BackendController@activate')->name('activate');
 
+Route::get('/', 'Frontend\FrontendController@index')->name('frontend.home');
