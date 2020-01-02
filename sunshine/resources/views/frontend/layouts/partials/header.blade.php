@@ -9,17 +9,21 @@
                 </div>
 
                 <div class="right-top-bar flex-w h-full">
+                    <a href="{{ route('app.setLocale', ['locale' => 'en']) }}" class="flex-c-m trans-04 p-lr-25">
+                        EN
+                    </a>
+                    <a href="{{ route('app.setLocale', ['locale' => 'vi']) }}" class="flex-c-m trans-04 p-lr-25">
+                        VI
+                    </a>
                     <a href="#" class="flex-c-m trans-04 p-lr-25">
                         Help & FAQs
                     </a>
 
                     <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        My Account
+                    {{ __('sunshine.my_account') }}
                     </a>
 
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        EN
-                    </a>
+                   
 
                     <a href="#" class="flex-c-m trans-04 p-lr-25">
                         USD
@@ -40,11 +44,11 @@
                 <div class="menu-desktop">
                     <ul class="main-menu">
                         <li class="{{ Request::is('') ? 'active-menu' : '' }}">
-                            <a href="">Home</a>
+                            <a href="">{{ __('sunshine.home') }}</a>
                         </li>
 
-                        <li>
-                            <a href="product.html">Shop</a>
+                        <li class="{{ Request::is('san-pham') ? 'active-menu' : '' }}">
+                             <a href="{{ route('frontend.product') }}">{{ __('sunshine.products') }}</a>
                         </li>
 
                         <li class="label1" data-label1="hot">
@@ -52,15 +56,15 @@
                         </li>
 
                         <li>
-                            <a href="blog.html">Blog</a>
+                            <a href="blog.html">{{ __('sunshine.blog') }}</a>
                         </li>
 
                         <li class="{{ Request::is('gioi-thieu') ? 'active-menu' : '' }}">
-                            <a href="">About</a>
+                            <a href="{{ route('frontend.about') }}">{{ __('sunshine.about') }}</a>
                         </li>
 
                         <li class="{{ Request::is('lien-he') ? 'active-menu' : '' }}">
-                            <a href="">Contact</a>
+                            <a href="{{ route('frontend.contact') }}">{{ __('sunshine.contact') }}</a>
                         </li>
                     </ul>
                 </div>

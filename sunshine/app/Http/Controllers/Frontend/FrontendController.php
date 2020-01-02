@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Loai; 
+use App\Mau; 
+
 use DB;
 use App\SanPham;
-
+use Mail;
+use App\Mail\ContactMailer;
 class FrontendController extends Controller
 {
     /**
@@ -42,4 +45,39 @@ class FrontendController extends Controller
         $data = $query->get();
         return $data;
     }
+    public function about()
+{
+    return view('frontend.pages.about');
+}
+public function contact()
+{
+    return view('frontend.pages.contact');
+}
+
+public function sendMailContactForm(Request $request)
+{
+    $input = $request->all();
+    Mail::to('queanhst98@gmail.com')->send(new ContactMailer($input));
+    return $input;
+}
+
+public function product(Request $request)
+{
+    // Query tìm danh sách sản phẩm
+    $danhsachsanpham = $this->searchSanPham($request);
+    // Query Lấy các hình ảnh liên quan của các Sản phẩm đã được lọc
+    $danhsachhinhanhlienquan = DB::table('hinhanh')
+                            ->whereIn('sp_ma', $danhsachsanpham->pluck('sp_ma')->toArray())
+                            ->get();
+    // Query danh sách Loại
+    $danhsachloai = Loai::all();
+    // Query danh sách màu
+    $danhsachmau = Mau::all();
+    // Hiển thị view `frontend.index` với dữ liệu truyền vào
+    return view('frontend.pages.product')
+        ->with('danhsachsanpham', $danhsachsanpham)
+        ->with('danhsachhinhanhlienquan', $danhsachhinhanhlienquan)
+        ->with('danhsachmau', $danhsachmau)
+        ->with('danhsachloai', $danhsachloai);
+}
 }
