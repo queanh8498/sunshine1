@@ -65,3 +65,11 @@ Route::get('setLocale/{locale}', function ($locale) {
     }
     return redirect()->back();
 })->name('app.setLocale');
+
+Route::get('/san-pham/{id}', 'Frontend\FrontendController@productDetail')->name('frontend.productDetail');
+
+Route::get('/gio-hang', 'Frontend\FrontendController@cart')->name('frontend.cart');
+
+Route::get('/gio-hang', 'Frontend\FrontendController@cart')->name('frontend.cart');
+Route::post('/dat-hang', 'Frontend\FrontendController@order')->name('frontend.order');
+Route::get('/dat-hang/hoan-tat', 'Frontend\FrontendController@orderFinish')->name('frontend.orderFinish');

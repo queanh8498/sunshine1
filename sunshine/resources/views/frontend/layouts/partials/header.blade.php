@@ -68,8 +68,18 @@
                         </li>
                     </ul>
                 </div>
-
-                <!-- Icon header -->
+                    <!-- Icon header -->
+    <div class="wrap-icon-header flex-w flex-r-m">
+      <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+        <i class="zmdi zmdi-search"></i>
+      </div>
+      <!-- Hiển thị nút summart cart -->
+      <ngcart-summary class="js-show-cart" template-url="{{ asset('vendor/ngCart/template/ngCart/summary.html') }}"></ngcart-summary>
+      <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+        <i class="zmdi zmdi-favorite-outline"></i>
+      </a>
+    </div>
+                   <!-- Icon header
                 <div class="wrap-icon-header flex-w flex-r-m">
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
                         <i class="zmdi zmdi-search"></i>
@@ -82,7 +92,8 @@
                     <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
                         <i class="zmdi zmdi-favorite-outline"></i>
                     </a>
-                </div>
+                </div> -->
+                
             </nav>
         </div>
     </div>
@@ -94,7 +105,7 @@
             <a href="index.html"><img src="{{ asset('themes/cozastore/images/icons/logo-01.png') }}" alt="IMG-LOGO"></a>
         </div>
 
-        <!-- Icon header -->
+        <!-- Icon header
         <div class="wrap-icon-header flex-w flex-r-m m-r-15">
             <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
                 <i class="zmdi zmdi-search"></i>
@@ -107,7 +118,19 @@
             <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
                 <i class="zmdi zmdi-favorite-outline"></i>
             </a>
-        </div>
+        </div> -->
+       <!-- Icon header -->
+       <!-- Icon header -->
+    <div class="wrap-icon-header flex-w flex-r-m">
+      <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+        <i class="zmdi zmdi-search"></i>
+      </div>
+      <!-- Hiển thị nút summart cart -->
+      <ngcart-summary class="js-show-cart" template-url="{{ asset('vendor/ngCart/template/ngCart/summary.html') }}"></ngcart-summary>
+      <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+        <i class="zmdi zmdi-favorite-outline"></i>
+      </a>
+    </div>
 
         <!-- Button show menu -->
         <div class="btn-show-menu-mobile hamburger hamburger--squeeze">

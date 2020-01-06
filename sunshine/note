@@ -3,3 +3,5 @@ Everytime you change your .env file, you need tor restart the server for the new
 Or clear and cache your configuration with
 
 - > php artisan config:cache
+
+gặp vấn đề hình , js , css : ctrl + f5
